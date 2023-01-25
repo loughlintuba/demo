@@ -1,0 +1,5 @@
+project_id                 = "ultra-thought-374601"
+topic                      = "demo-pubsub-topic-bigquery"
+location                   = "US"  
+dataset_id                 = "demo"
+table_id                   = "demo-table"
