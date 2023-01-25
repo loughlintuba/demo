@@ -1,19 +1,19 @@
-import groovy.json.*
+// import groovy.json.*
 
-def contents = new JsonSlurper().parse('https://api.github.com/repos/loughlintuba/bq-ada/deployments/terraform/examples/basic_bq'.toURL())
-    .sort { it.type } // Directories first
-    .collect { it.name + (it.type == 'dir' ? '/' : '') } // Put a slash on the end of directories
+// def contents = new JsonSlurper().parse('https://api.github.com/repos/loughlintuba/bq-ada/deployments/terraform/examples/basic_bq'.toURL())
+//     .sort { it.type } // Directories first
+//     .collect { it.name + (it.type == 'dir' ? '/' : '') } // Put a slash on the end of directories
 
-assert contents = ['handling/', 
-                   'internal/', 
-                   'render/', 
-                   'script/', 
-                   'server/', 
-                   'sql/', 
-                   'template/', 
-                   'Groovy.java', 
-                   'GroovyRatpackMain.java', 
-                   'package-info.java']
+// assert contents = ['handling/', 
+//                    'internal/', 
+//                    'render/', 
+//                    'script/', 
+//                    'server/', 
+//                    'sql/', 
+//                    'template/', 
+//                    'Groovy.java', 
+//                    'GroovyRatpackMain.java', 
+//                    'package-info.java']
 
 
 def k8slabel = "jenkins-pipeline-${UUID.randomUUID().toString()}"
