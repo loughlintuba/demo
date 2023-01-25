@@ -77,10 +77,10 @@ def slavePodTemplate = """
     podTemplate(name: k8slabel, label: k8slabel, yaml: slavePodTemplate, showRawYaml: false) {
       node(k8slabel) {
         stage("Pull SCM") {
-            git 'https://github.com/loughlintuba/bq-ada.git'
+            git 'https://github.com/loughlintuba/demo.git'
         }
         container("buildtools") {
-            dir('bq') {
+            dir("${resource}") {
                 withCredentials([file(credentialsId: 'tiffany', variable: 'service_account')]) {
                     stage("Terraform Apply/plan") {
                         if (!params.terraformDestroy) {
