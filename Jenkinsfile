@@ -80,7 +80,7 @@ def slavePodTemplate = """
             git 'https://github.com/loughlintuba/bq-ada.git'
         }
         container("buildtools") {
-            dir('${resource}') {
+            dir("${resource}") {
                 withCredentials([file(credentialsId: 'tiffany', variable: 'service_account')]) {
                     stage("Terraform Apply/plan") {
                         if (!params.terraformDestroy) {
@@ -89,7 +89,7 @@ def slavePodTemplate = """
                                 sh '''#!/bin/bash -e
                                 DIR=$(pwd)
                                 cp -rf ${service_account}  $DIR/credentials.json
-                                source ./set-env.sh 
+                                source set-env.sh 
                                 terraform init
                                 terraform apply -auto-approve -var-file ./${account}/${account}-${resource}-${environment}.tfvars
                                 '''
