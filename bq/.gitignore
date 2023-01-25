@@ -1,8 +1,0 @@
-*state*
-*.terraform*
-
-*backend.tf
-*project.yaml*
-*config
-*sh*
-
