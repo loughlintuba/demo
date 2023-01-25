@@ -80,7 +80,7 @@ def slavePodTemplate = """
             git 'https://github.com/loughlintuba/bq-ada.git'
         }
         container("buildtools") {
-            dir("${resource}") {
+            dir('bq') {
                 withCredentials([file(credentialsId: 'tiffany', variable: 'service_account')]) {
                     stage("Terraform Apply/plan") {
                         if (!params.terraformDestroy) {
