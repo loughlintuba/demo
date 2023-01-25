@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/sh
 
 DIR=$(pwd)
 cat << EOF > "$DIR/backend.tf"
@@ -11,6 +10,7 @@ terraform {
 }
 EOF
 cat "$DIR/backend.tf"
-
+echo $DIR
 GOOGLE_APPLICATION_CREDENTIALS="$DIR/credentials.json"
 export GOOGLE_APPLICATION_CREDENTIALS
+
